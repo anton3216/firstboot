@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.qingqiao.firstboot.mapper.UserMapper">
+    <select id="getAllUser" resultType="org.qingqiao.firstboot.bean.User">
+        select * from demo;
+    </select>
+    <insert id="addUser" parameterType="org.qingqiao.firstboot.bean.User">
+        insert into user (name,address) values (#{name},#{address});
+    </insert>
+    <update id="updateUserById" parameterType="org.qingqiao.firstboot.bean.User">
+        update user set username=#{name},address=#{address} where id=#{id}
+    </update>
+    <delete id="deleteUserById">
+        delete from user where id=#{id}
+    </delete>
+</mapper>
